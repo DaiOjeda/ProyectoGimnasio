@@ -1,10 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'index.html' %}
 
-</body>
-</html>
+<title>
+    {% block title %}
+    Cliente
+    {% endblock %}
+</title>
+
+{% block inicio %}
+    <form action=""method="POST">
+      {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Enviar">
+    </form>
+{% endblock %}
