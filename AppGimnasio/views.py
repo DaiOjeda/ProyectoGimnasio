@@ -1,3 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from datetime import datetime
 
-# Create your views here.
+def inicio(request):
+    return render(request, 'index.html')
+
+def cliente(request):
+    cliente1 = Cliente(nombre="cliente", dni=00000000)
+    cliente1.save()
+    contexto = {
+        'cliente': cliente1
+    }
+    return render (request, 'AppGimnasio/cliente.html, contexto')
+
