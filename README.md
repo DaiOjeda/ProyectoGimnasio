@@ -5,7 +5,7 @@ PROYECTO FINAL CODERHOUSE.
 4. Un formulario para buscar algo en la BD.
 5. Readme que indique en el orden en el que se prueban las cosas y/o donde están las funcionalidades.
 
-Tema: Página para un gimnasio 
+Tema: Página para un gimnasio. 
 
 Funcionalidades: dar de alta/baja a un cliente, indicar que actividad realiza, indicar si pagó o no la cuota. 
 
