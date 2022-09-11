@@ -8,9 +8,9 @@ def inicio(request):
 
 def cliente(request):
     cliente1 = Cliente(nombre="cliente", dni=00000000)
-    cliente1.save()
+    cliente1.save()#hacer un if de si el dni existe, dar msj de error e ingresar otro
     contexto = {
         'cliente': cliente1
     }
-    return render(request, 'AppGimnasio/cliente.html' , contexto)
+    return redirect(request, 'AppGimnasio/cliente.html' , contexto)#se cambio redirect por render
 
