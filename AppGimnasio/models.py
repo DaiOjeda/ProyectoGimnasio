@@ -2,7 +2,7 @@ from django.db import models
 
 class Cliente(models.Model):
     nombre = models.CharField(max_length=40)
-    dni = models.IntegerField(unique=True, max_length=8)
+    dni = models.IntegerField(unique=True,) #Se elimino el max_lenght=8, se modifica desde BD
 
 class Actividad(models.Model):
     nombre = models.CharField(max_length=40)
