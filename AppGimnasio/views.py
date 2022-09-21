@@ -9,11 +9,31 @@ def inicio(request):
 
 def cliente(request):
     cliente1 = Cliente(nombre="Cristian", dni=24682468)
-    cliente1.save()#hacer un if de si el dni existe, dar msj de error e ingresar otro
+    cliente1.save()
     contexto = {
         'cliente': cliente1
     }
     return redirect(request, 'AppGimnasio/cliente.html' , contexto)#se cambio redirect por render
+
+def cliente_formulario(request):
+    if request.method == 'POST': #Se carga formulario
+        mi_formulario = ClienteFormulario(request.POST)
+
+        if mi_formulario.is_valid(): #Se valida formulario
+            data = mi_formulario.cleaned_data #Si es valido captura la data
+            cliente1 = Cliente(nombre=data.get('nombre'), dni=data.get('dni')) #Se guarda la data
+            cliente1.save()
+
+            return redirect('AppGimnasioCliente')
+
+        clientes = Cliente.objects.all()
+
+        contexto = {
+            'form': ClienteFormulario(),
+            'clientes': clientes
+        }
+        return render(request, 'AppGimnasio/cliente_formulario.html', contexto)
+
 
 
 # def actividad(request):
