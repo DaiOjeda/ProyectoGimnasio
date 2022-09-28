@@ -1,6 +1,7 @@
 
 from django.shortcuts import render, redirect
 from datetime import datetime
+from AppGimnasio.forms import ClienteFormulario
 from AppGimnasio.models import Cliente #Actividad
 
 
